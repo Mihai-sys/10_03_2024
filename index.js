@@ -75,3 +75,112 @@ switch (weekDay) {
         break;
 
 }
+
+//bucle
+
+//while
+// calcularea unei sume totale dintr-un cos de cumparaturi folosind while
+const cartItems =[
+    {
+        name: "Iphone 16",
+        price: 1700,
+        currency: "$",
+        amount: 1
+    },
+    {
+        name: "Protector sleeve",
+        price: 100,
+        currency: "$",
+        amount: 3
+    },
+    {
+        name: "Applle sticker",
+        price: 21.99,
+        currency: "$",
+        amount: 4
+    }
+]
+
+let totalPrice = 0;
+let productIndex = 0;
+
+while (productIndex < cartItems.length) {
+    let product = cartItems[productIndex];
+    totalPrice += product.price * product.amount;
+    productIndex ++;
+}
+
+console.log("Your cart total is: ", totalPrice, cartItems[0].currency);
+
+// do - while
+
+let n = 3;
+let currentNumber = 0;
+do {
+    currentNumber++;
+    console.log(currentNumber);
+} while(currentNumber < n);
+
+//for
+// calcularea unei sume totale dintr-un cos de cumparaturi folosind for
+let totalPrice2 = 0;
+for (i = 0; i < cartItems.length; i++){
+    let product = cartItems[i];
+    totalPrice2 += product.price * product.amount;
+}
+
+console.log("Your cart total computed with 'for is: ", totalPrice2, cartItems[0].currency);
+
+
+// for of
+// // calcularea unei sume totale dintr-un cos de cumparaturi folosind "for of"
+let totalPrice3 = 0;
+for(let product of cartItems){
+    totalPrice3 += product.amount * product.price;
+}
+
+console.log("Your cart total computed with 'for is: ", totalPrice3, cartItems[0].currency);
+
+
+//for in
+let iphone = {
+    name: "Iphone 16",
+    price: 1700,
+    currency: "$",
+    amount: 1
+};
+
+for( let key in iphone) {
+    console.log("key: ", key);
+}
+
+
+// break
+
+const numbers = [123, 43, 12, 1231321, 9];
+
+let numberToCheck = 12;
+
+for(let j = 0; j < numbers.length; j++){
+    console.log("j: ", j);
+    if(numberToCheck === numbers[j]){
+        console.log("Number: ", numberToCheck, "is found at index",  j);
+        break;
+    }
+}
+
+
+// continue
+
+// calcularea sumei primelor n numere pare
+let firstN = 8;
+let sum = 0;
+for (i = 1; i <= firstN; i++){
+    if (i % 2 !== 0){
+        continue;
+    }
+
+    sum +=i;
+}
+
+console.log("Suma primelor: ", firstN, "numere pare este: ", sum);
